@@ -44,7 +44,7 @@ Ik heb veel zitten debuggen omdat de code nog niet in 1x werkte. Ik had in mijn 
 
 Om een beter beeld te krijgen wat er gebeurde met de waardes van de kleuren heb ik 3 indicatie boxes gemaakt. In de middelste zit de gekozen kleur, in de linker zit de minimale RGB en rechts de maximale RGB. Ik had dit idee sowieso al bedacht om te voldoen aan zowel begrip [4&11](http://bokardo.com/principles-of-user-interface-design/). Deze kleurboxes bleken ook heel handig bij het debuggen. 
 
-Ik zag dat de kleuren soms rare sprongen maakte. Ik kwam erachter dat dit was omdat ik telkens heen en weer zat te rekenen van HEXcode naar 0-255. Als ik vervolgens terugrekende lieten HEX codes die begonnen met '0' deze nul weg. Hierdoor kreeg ik RGB codes van 5 tekens lang. Hierdoor werden de gevonden foto's ook niet van toepassing. Met wat javascript en een `if` heb ik dit opgelost. Het totaalplaatje begint al wel ergens op te lijken. 
+Ik zag dat de kleuren soms rare sprongen maakte. Ik kwam erachter dat dit was omdat ik telkens heen en weer zat te rekenen van HEXcode naar 0-255. Als ik vervolgens terugrekende lieten HEX codes die begonnen met '0' deze nul weg. Hierdoor kreeg ik RGB codes van 5 tekens lang wat zorgde dat de gevonden foto's ook niet van toepassing waren. Met wat javascript en een `if` heb ik dit opgelost. Het totaalplaatje begint al wel ergens op te lijken. 
 
 Ook heb ik hier de range sliders laten updaten per stap in plaats van als je hem los laat. Dit heb ik gedaan door de eventlistener te laten luisteren naar 'input' in plaats van 'change'.
 
