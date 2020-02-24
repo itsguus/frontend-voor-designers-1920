@@ -33,7 +33,7 @@ Nu de basis er stond in HTML/CSS kon ik met Javascript zorgen dat de sliders 'ge
 
 Vanaf deze stap ben ik enorm aan het kloten geweest. Ik kreeg Vibrant niet aan de praat en de 5 andere API's die erop leken ook niet. Het bleek dat Vibrant de images niet kon laden omdat zij niet vanaf dezelfde parent node kwamen. Dit kwam omdat ik lokaal op mijn mac via Brackets zat te coderen. 
 
-Ik had dit op kunnen lossen door telkens mijn code naar git te pushen totdat het zou werken. Ik heb uiteindelijk gekozen om handmatig 3 kleuren per geuploadde foto in een array te zetten in js. Dit heb ik gedaan omdat het 'verwerken' van de gekozen kleuren nog niet af was en mijn codeerproces met het pushen naar git een stuk langer ging duren.
+Ik had dit op kunnen lossen door telkens mijn code naar git te pushen totdat het zou werken. Ik heb uiteindelijk gekozen om handmatig 3 kleuren per geuploade foto in een array te zetten in js. Dit heb ik gedaan omdat het 'verwerken' van de gekozen kleuren nog niet af was en mijn codeerproces met het pushen naar git een stuk langer ging duren.
 
 Ik heb veel zitten debuggen omdat de code nog niet in 1x werkte. Ik had in mijn console een hoop logs staan om te kijken wat er in de browser precies berekend werd. Een voorbeeld hiervan is in afbeelding 5. Er gebeurde al wel wat. Op sommige waardes kreeg ik een afbeelding te zien als ik op search drukte. Ik had alleen het gevoel dat dit nog niet helemaal klopte.
 
