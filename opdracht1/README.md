@@ -31,7 +31,9 @@ Nu de basis er stond in HTML/CSS kon ik met Javascript zorgen dat de sliders 'ge
 ### Afbeelding 4 - Controls aan elkaar gelinkt via JS.
 ![alt text][img4]
 
-Vanaf deze stap ben ik enorm aan het kloten geweest. Ik kreeg Vibrant niet aan de praat en de 5 andere API's die erop leken ook niet. Het bleek dat Vibrant de images niet kon laden omdat zij niet vanaf dezelfde parent node kwamen. Dit kwam omdat ik lokaal op mijn mac via Brackets zat te coderen. Ik had dit op kunnen lossen door telkens mijn code naar git te pushen totdat het zou werken. Ik heb uiteindelijk gekozen om handmatig 3 kleuren per geuploadde foto in een array te zetten in js. Dit heb ik gedaan omdat het 'verwerken' van de gekozen kleuren nog niet af was en mijn codeerproces met het pushen naar git een stuk langer ging duren.
+Vanaf deze stap ben ik enorm aan het kloten geweest. Ik kreeg Vibrant niet aan de praat en de 5 andere API's die erop leken ook niet. Het bleek dat Vibrant de images niet kon laden omdat zij niet vanaf dezelfde parent node kwamen. Dit kwam omdat ik lokaal op mijn mac via Brackets zat te coderen. 
+
+Ik had dit op kunnen lossen door telkens mijn code naar git te pushen totdat het zou werken. Ik heb uiteindelijk gekozen om handmatig 3 kleuren per geuploadde foto in een array te zetten in js. Dit heb ik gedaan omdat het 'verwerken' van de gekozen kleuren nog niet af was en mijn codeerproces met het pushen naar git een stuk langer ging duren.
 
 Ik heb veel zitten debuggen omdat de code nog niet in 1x werkte. Ik had in mijn console een hoop logs staan om te kijken wat er in de browser precies berekend werd. Een voorbeeld hiervan is in afbeelding 5. Er gebeurde al wel wat. Op sommige waardes kreeg ik een afbeelding te zien als ik op search drukte. Ik had alleen het gevoel dat dit nog niet helemaal klopte.
 
@@ -40,7 +42,11 @@ Ik heb veel zitten debuggen omdat de code nog niet in 1x werkte. Ik had in mijn 
 
 ## Stap 3 - Verfijnen & Afronden
 
-Om een beter beeld te krijgen wat er gebeurde met de waardes van de kleuren heb ik 3 indicatie boxes gemaakt. In de middelste zit de gekozen kleur, in de linker zit de minimale RGB en rechts de maximale RGB. Ik had dit idee sowieso al bedacht om te voldoen aan zowel begrip [4&11](http://bokardo.com/principles-of-user-interface-design/). Deze kleurboxes bleken ook heel handig bij het debuggen. Ik zag dat de kleuren soms rare sprongen maakte. Ik kwam erachter dat dit was omdat ik telkens zat te springen van HEXcode naar 0-255. Dit deed ik om te rekenen. Als ik vervolgens terugrekende lieten HEX codes die begonnen met '0' deze nul weg. Hierdoor kreeg ik RGB codes van 5 tekens lang. Hierdoor werden de gevonden foto's ook niet van toepassing. Met wat javascript en een ifje heb ik dit opgelost. Het totaalplaatje begint al wel ergens op te lijken. Ook heb ik hier de range sliders laten updaten per stap in plaats van als je hem los laat. Dit heb ik gedaan door de eventlistener te laten luisteren naar 'input' in plaats van 'change'.
+Om een beter beeld te krijgen wat er gebeurde met de waardes van de kleuren heb ik 3 indicatie boxes gemaakt. In de middelste zit de gekozen kleur, in de linker zit de minimale RGB en rechts de maximale RGB. Ik had dit idee sowieso al bedacht om te voldoen aan zowel begrip [4&11](http://bokardo.com/principles-of-user-interface-design/). Deze kleurboxes bleken ook heel handig bij het debuggen. 
+
+Ik zag dat de kleuren soms rare sprongen maakte. Ik kwam erachter dat dit was omdat ik telkens heen en weer zat te rekenen van HEXcode naar 0-255. Als ik vervolgens terugrekende lieten HEX codes die begonnen met '0' deze nul weg. Hierdoor kreeg ik RGB codes van 5 tekens lang. Hierdoor werden de gevonden foto's ook niet van toepassing. Met wat javascript en een `if` heb ik dit opgelost. Het totaalplaatje begint al wel ergens op te lijken. 
+
+Ook heb ik hier de range sliders laten updaten per stap in plaats van als je hem los laat. Dit heb ik gedaan door de eventlistener te laten luisteren naar 'input' in plaats van 'change'.
 
 ### Afbeelding 6 - Einde in zicht, colorboxes als indicator toegevoegd. 
 ![alt text][img6]
