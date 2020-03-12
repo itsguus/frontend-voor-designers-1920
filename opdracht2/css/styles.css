@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+}
+
+
+section {
+    width: 900px;
+    height: 800px;
+    margin: 0 auto;
+    background: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    z-index: -11;
+}
+
+
+.box {
+    display: flex;
+    margin: 0 auto;
+    /*    background: red;*/
+    justify-content: center;
+    z-index: -10;
+}
+
+
+
+img {
+    display: block;
+    width: 150px;
+    height: auto;
+    transition: 1s;
+}
+
+.middle {}
+
+.i5 {
+    z-index: -1;
+}
+
+.i6 {
+    z-index: -2;
+}
+
+.i7 {
+    z-index: -3;
+}
+
+.i8 {
+    z-index: -4;
+}
+
+.i9 {
+    z-index: -5;
+}
+
+.goneLeft {
+    transform: rotateY(-90deg);
+    margin-right: -135px;
+}
+
+.goneRight {
+    transform: rotateY(90deg);
+    margin-left: -135px;
+}
+
+.farLeft {
+    transform: rotateY(-70deg);
+    margin-right: -54px;
+}
+
+.left {
+    transform: rotateY(-35deg);
+    margin-right: -5px;
+}
+
+.farRight {
+    transform: rotateY(70deg);
+    margin-left: -54px;
+}
+
+.right {
+    transform: rotateY(35deg);
+    margin-left: -5px;
+}
+
+.gone {
+    transform: rotateY(90deg);
+}
+
+.buttonbox {
+    display: flex;
+}
+
+.buttonleft {
+    width: 50px;
+    height: 50px;
+    background: #4d4d4d;
+    margin: 20px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.buttonright {
+    width: 50px;
+    height: 50px;
+    background: #4d4d4d;
+    margin: 20px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.buttonright p,
+.buttonleft p {
+    display: block;
+    margin: 0 auto;
+}
