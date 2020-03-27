@@ -1,8 +1,35 @@
-<html>
-  <head>
-    <title>Frontend voor Designer - Opdracht 3</title>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
 
-  <body>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Frontend voor Designers opdracht 3</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="workBox">
+        <main>
+            <img src="images/nederland3.png" alt="">
+            <h1>The CoVID-19 Quarantaine Simulator</h1>
+            <div class="stats">
+                <p>Date: <span id="date"></span></p>
+                <p>Confirmed: <span id="confirmed"></span></p>
+                <!--                <p>Deaths: <span id="deaths"></span></p>-->
+                <!--                <p>Recovered: <span id="recovered"></span></p>-->
+            </div>
+            <div class="nodeBox">
+                <div class="spreadNode SN0"></div>
+                <div class="spreadNode SN1"></div>
+                <div class="spreadNode SN2"></div>
+            </div>
+        </main>
+        <div class="keyBox">
+            <div class="key" id="f">F</div>
+            <div class="key" id="j">J</div>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+
 </html>

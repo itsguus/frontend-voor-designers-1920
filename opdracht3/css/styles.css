@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+    line-height: 2em;
+    height: 2em;
+}
+
+img {
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    z-index: -1;
+    user-select: none;
+}
+
+.workBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+main {
+    width: 900px;
+    height: 900px;
+    margin: 0 auto;
+    z-index: -3;
+    background: #eee;
+    border-radius: 25px;
+}
+
+.nodeBox {
+    height: 600px;
+    width: 400px;
+    /*    background: blue;*/
+    margin: 0 auto;
+}
+
+
+.spreadNode {
+    position: relative;
+    background-color: red;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    z-index: -2;
+}
+
+
+.SN0 {
+    margin-left: 100px;
+    top: 280px;
+}
+
+.SN1 {
+    margin-left: 300px;
+    top: 130px;
+}
+
+.SN2 {
+    margin-left: 250px;
+    top: 380px;
+}
+
+.keyBox {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 800px;
+    display: flex;
+    flex-direction: row;
+    width: 350px;
+    justify-content: space-around;
+}
+
+.key {
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border: 1px solid gray;
+    font-size: 1.2em;
+    box-shadow: 1px 0 1px 0 #eee, 0 2px 0 2px #ccc, 0 2px 0 3px #444;
+    border-radius: 3px;
+    margin: 2px 3px;
+    padding: 1px 5px;
+    user-select: none;
+    text-align: center;
+    line-height: 60px;
+}
+
+
+.keydown {
+    background: #eee;
+    transform: rotateX(30deg);
+    transform-origin: bottom;
+}
+
+.initiate {
+    animation: grow 61s linear;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+/*Expontentiele groei hierin een beetje zitten veinsen haha*/
+@keyframes grow {
+    0% {
+        transform: scale(1)
+    }
+
+    10% {
+        transform: scale(1.5)
+    }
+
+    20% {
+        transform: scale(2)
+    }
+
+    30% {
+        transform: scale(2.5)
+    }
+
+    40% {
+        transform: scale(6)
+    }
+
+    50% {
+        transform: scale(8)
+    }
+
+    60% {
+        transform: scale(10)
+    }
+
+    70% {
+        transform: scale(13)
+    }
+
+    80% {
+        transform: scale(18)
+    }
+
+    90% {
+        transform: scale(25)
+    }
+
+    100% {
+        transform: scale(50)
+    }
+}
