@@ -1,4 +1,4 @@
-Link: https://itsguus.github.io/frontend-voor-designers-1920/
+Link: https://itsguus.github.io/frontend-voor-designers-1920/opdracht3/index.html
 
 MD file komt nog, heb alle screenshots van along the way.
 
