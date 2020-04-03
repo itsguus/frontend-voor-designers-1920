@@ -60,8 +60,10 @@ var SN = [document.querySelector(".SN0"), //Node #1  SN = spreadNode
 var aantalNederlanders = 17400000; // Staat hierboven voor het gemak. Zodra de teller meer dan dit wordt stopt ie.
 var activated = false; // Wordt true zodra je op start drukt. Zorgt ervoor dat de loopende functie niet vaker dan 1 keer tegelijk gaan runnen. 
 var allowedToCount = false; // pause/play op het hele geintje.
-var jKey = document.querySelector('#j')
-var fKey = document.querySelector('#f')
+var jKey = document.querySelector('#j');
+var fKey = document.querySelector('#f');
+var speed = 50;
+var done = false;
 
 let requestURL = 'https://pomber.github.io/covid19/timeseries.json'; //API link 
 let request = new XMLHttpRequest(); //API request
@@ -100,14 +102,67 @@ function showConfirmed(jsonObj) { // Een functie die de huidige besmette mensen 
 //}
 //------------------------------------------------------------------------------------------
 
+
+function die() {
+    done = true;
+    document.querySelector(".endbox").style.opacity = 1;
+    document.querySelector(".endbox").style.transition = "all 1s ease";
+    var dateStart = new Date(),
+        endDate = new Date(yyyy, mm - 1, dd),
+        amountDays = Math.round(Math.abs((dateStart - endDate) / (24 * 60 * 60 * 1000))),
+        message, whatHappened;
+    console.log(amountDays);
+    if (amountDays < 18) {
+        message = "OH NO!";
+        whatHappened = "Everybody got corona in such a short span..";
+    }
+    if (amountDays > 19 && amountDays < 30) {
+        message = "OKAY...";
+        whatHappened = "You stayed home a bit but the virus still spread too fast..";
+    }
+    if (45 < amountDays) {
+        message = "CONGRATULATIONS";
+        whatHappened = "Because of your quarantaining actions the hospitals had enough capacity to save the population!";
+    }
+    setTimeout(function () {
+        document.querySelector("#endtext").textContent = message;
+        document.querySelector("#endtext").style.opacity = 1;
+        document.querySelector("#endtext").style.transition = "all 1s ease-in";
+    }, 1000);
+    setTimeout(function () {
+        document.querySelector("#amountdays").textContent = amountDays + " DAYS";
+        document.querySelector("#amountdays").style.opacity = 1;
+        document.querySelector("#amountdays").style.transition = "all 1s ease-in";
+    }, 2000);
+    setTimeout(function () {
+        document.querySelector("#whathappened").textContent = whatHappened;
+        document.querySelector("#whathappened").style.opacity = 1;
+        document.querySelector("#whathappened").style.transition = "all 1s ease-in";
+    }, 3000);
+    setTimeout(function () {
+        document.querySelector(".buttonAgain").style.opacity = 1;
+        document.querySelector(".buttonAgain").style.transition = "all 1s ease-in";
+    }, 5000);
+}
+
+
 function countConfirmed() {
     if (allowedToCount) {
         if (confirmed > aantalNederlanders) {
-            //        Die();
+            setTimeout(die, 1000);
         } else {
             confirmed = Math.round(Math.pow(confirmed, countRate));
             confirmedElement.textContent = numberWithCommas(confirmed);
-            setTimeout(countConfirmed, 50);
+            var i;
+            for (i = 0; i < 3; i++) {
+                SN[i].style.transform = "scale(" + (confirmed / 348060) + ")";
+                SN[i].style.transform = "transition(" + speed + "ms)";
+            }
+            speed = speed - 0.25;
+            if (speed < 15) {
+                speed = 15;
+            }
+            setTimeout(countConfirmed, speed);
         }
     }
 }
@@ -122,44 +177,32 @@ function calculateCountRate(jsonObj) {
 function grow() {
     var i;
     for (i = 0; i < 3; i++) {
-        SN[i].classList.add('initiate');
+        SN[i].classList.add('show');
     }
     countConfirmed();
 }
 
-function pauseSpread() {
-    allowedToCount = false;
-    var i;
-    for (i = 0; i < 3; i++) {
-        SN[i].style.webkitAnimationPlayState = "paused";
-    }
-    fKey.classList.add("keydown");
-    jKey.classList.remove("keydown");
+function stayHome() {
+    speed = speed + 5;
 }
 
-function resumeSpread() {
-    if (jKey.classList.contains("keydown")) {} else {
-        allowedToCount = true;
-        countConfirmed();
-        var i;
-        for (i = 0; i < 3; i++) {
-            SN[i].style.webkitAnimationPlayState = "running";
-        }
-        fKey.classList.remove("keydown");
-        jKey.classList.add("keydown");
-    }
+function goParty() {
+    speed = speed - 15;
 }
+
 
 function dateTimer() {
-    var tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + counter);
-    dd = String(tomorrow.getDate()).padStart(2, '0');
-    mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
-    yyyy = tomorrow.getFullYear();
-    calcDateElement.textContent = dd + "-" + mm + "-" + yyyy;
-    calcDate = dd + mm + yyyy;
-    counter = counter + 1;
-    setTimeout(dateTimer, 2000);
+    if (!done) {
+        var tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + counter);
+        dd = String(tomorrow.getDate()).padStart(2, '0');
+        mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+        yyyy = tomorrow.getFullYear();
+        calcDateElement.textContent = dd + "-" + mm + "-" + yyyy;
+        calcDate = dd + mm + yyyy;
+        counter = counter + 1;
+        setTimeout(dateTimer, 2000);
+    }
 }
 
 request.onload = function () {
@@ -175,21 +218,41 @@ document.addEventListener("keydown", function (e) {
     if (e.key == " " && activated === false) {
         activated = true;
         allowedToCount = true;
-        grow();
-        setTimeout(dateTimer, 2000);
+        setTimeout(dateTimer, 3000);
+        setTimeout(grow, 1000);
+        document.querySelector(".startbox").classList.add("displaynone");
     }
     if (e.key == "f" && activated === true) {
-        pauseSpread();
+        fKey.classList.toggle('keydown');
+        stayHome();
     }
     if (e.key == "j" && activated === true) {
-        resumeSpread();
+        jKey.classList.toggle('keydown');
+        goParty();
     }
 }, false);
 
+
+document.addEventListener("keyup", function (e) {
+    if (e.key == "f" && activated === true) {
+        fKey.classList.toggle('keydown');
+    }
+    if (e.key == "j" && activated === true) {
+        jKey.classList.toggle('keydown');
+    }
+}, false);
+
+
 fKey.addEventListener("click", function () {
-    pauseSpread();
+    fKey.classList.toggle('keydown');
+    stayHome();
 });
 
 jKey.addEventListener("click", function () {
-    resumeSpread();
+    jKey.classList.toggle('keydown');
+    goParty();
+});
+
+document.querySelector(".buttonAgain").addEventListener("click", function () {
+    location.reload();
 });

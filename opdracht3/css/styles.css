@@ -1,6 +1,11 @@
 * {
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    color: #031927
+}
+
+body {
+    background: #C8E0F4
 }
 
 h1 {
@@ -9,7 +14,7 @@ h1 {
     height: 2em;
 }
 
-img {
+img.background {
     position: absolute;
     width: 900px;
     height: 900px;
@@ -43,27 +48,31 @@ main {
 
 .spreadNode {
     position: relative;
-    background-color: red;
+    background-color: #BA1200;
     border-radius: 50%;
     height: 10px;
     width: 10px;
     z-index: -2;
+    display: none;
 }
 
+.show {
+    display: block;
+}
 
 .SN0 {
     margin-left: 100px;
-    top: 280px;
+    top: 180px;
 }
 
 .SN1 {
     margin-left: 300px;
-    top: 130px;
+    top: 70px;
 }
 
 .SN2 {
     margin-left: 250px;
-    top: 380px;
+    top: 280px;
 }
 
 .keyBox {
@@ -97,59 +106,179 @@ main {
 
 .keydown {
     background: #eee;
-    transform: rotateX(30deg);
+    transform: rotateX(20deg);
     transform-origin: bottom;
 }
 
-.initiate {
-    animation: grow 61s linear;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
+.startbox {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    height: 900px;
+    width: 900px;
+    background-color: #8AA399;
+    border-radius: 25px;
+    /*    display: none;*/
 }
 
-/*Expontentiele groei hierin een beetje zitten veinsen haha*/
-@keyframes grow {
+.startbox h1 {
+    margin-top: 50px;
+}
+
+.sb {
+    margin: 0 auto;
+    width: 680px;
+}
+
+.description {
+    margin-top: 300px;
+}
+
+.goBox {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.spaceBar {
+    width: 500px;
+    margin: 0 auto;
+    animation: spaceBarAnimation 2s ease infinite;
+    transform-origin: bottom;
+}
+
+img.finger {
+    height: 100px;
+    width: auto;
+    margin-left: 5px;
+    animation: fingerAnimation 2s ease infinite;
+    margin-bottom: 30px;
+}
+
+
+.goButton {
+    text-transform: uppercase;
+    color: white;
+    font-size: 3em;
+    margin-top: 10px;
+}
+
+@keyframes fingerAnimation {
     0% {
-        transform: scale(1)
-    }
-
-    10% {
-        transform: scale(1.5)
-    }
-
-    20% {
-        transform: scale(2)
-    }
-
-    30% {
-        transform: scale(2.5)
-    }
-
-    40% {
-        transform: scale(6)
+        transform: translateY(00px);
     }
 
     50% {
-        transform: scale(8)
-    }
-
-    60% {
-        transform: scale(10)
-    }
-
-    70% {
-        transform: scale(13)
-    }
-
-    80% {
-        transform: scale(18)
-    }
-
-    90% {
-        transform: scale(25)
+        transform: translateY(30px);
     }
 
     100% {
-        transform: scale(50)
+        transform: translateY(0px);
     }
+}
+
+@keyframes spaceBarAnimation {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    50% {
+        background: #ddd;
+        transform: rotateX(30deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
+
+}
+
+.displaynone {
+    opacity: 0;
+    transition: 1s ease-in;
+}
+
+.showitnow {
+    opacity: 1;
+    transition: 1s ease;
+    z-index: 10;
+}
+
+h1.title {
+    margin-top: 20px;
+}
+
+.stats {
+    margin-top: 0px;
+    margin-left: 50px;
+}
+
+.stats p:nth-child(2) {
+    margin-bottom: 10px;
+    font-size: 2em;
+    font-size: 2em;
+}
+
+.stats p:nth-child(4) {
+    font-size: 2em;
+}
+
+.endbox {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    height: 900px;
+    width: 900px;
+    background-color: #8AA399;
+    border-radius: 25px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#endtext {
+    margin-top: -200px;
+    font-size: 3em;
+    opacity: 0;
+}
+
+#amountdays {
+    font-size: 4em;
+    opacity: 0;
+}
+
+#whathappened {
+    opacity: 0;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.buttonAgain {
+    height: 100px;
+    width: 300px;
+    font-size: 2em;
+    background: #ba1200;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 200px;
+    line-height: 100px;
+    border-radius: 25px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    color: white;
+    cursor: pointer;
+    transition: 500ms ease;
+    user-select: none;
+    opacity: 0;
+}
+
+.buttonAgain:hover {
+    transform: scale(1.1);
+}
+
+.buttonAgain:active {
+    background-color: darkred;
 }
