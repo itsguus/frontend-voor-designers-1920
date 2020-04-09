@@ -1,5 +1,5 @@
 # Frontend voor Designers - opdracht 3: Een interactie uitwerken met externe data
-[Link](https://itsguus.github.io/frontend-voor-designers-1920/opdracht1/).  Gemaakt door Guus Groenink.
+[Link](https://itsguus.github.io/frontend-voor-designers-1920/opdracht3/).  Gemaakt door Guus Groenink.
 
 
 ## Gekozen use case
@@ -67,6 +67,20 @@ Nadat dit klaar was heb ik de vormgeving van de main attraction gedaan. De toets
 ### Afbeelding 10 - Eindresultaat.
 ![alt text][img10]
 
+## Stap 4 - Princples of User Interface Design
+### 04 Keep users in control
+Op elk scherm die ik heb geef ik de controle volledig aan de gebruiker. In het eerste scherm vertel ik met tekst en laat ik visueel zien wat er moet gebeuren om het 'spel' te spelen. Hierna staan de knoppen duidelijk onderin met de tekst er nog bij. Alle knoppen zijn zowel met keyboard-toetsen als met de muis klikbaar.
+
+### 08 Provide a natural next step
+Mijn concept heeft drie fases. Het startscherm, het spelscherm en het eindscherm. Alle stappen volgen elkaar op met easy-on-the-eyes transitions en op het einde krijg je een prompt of je opnieuw wilt proberen.
+
+### 09 Appearance follows behaviour
+De knoppen zijn dusdanig visueel dat het duidelijk is dat het een toetsenbord knop is. Ook zijn de divs eromheen vormgegeven met een schaduw en geeft een :hover een andere kleur. 
+
+Door deze manier van vormgeving zien de elementen er ook uit hoe ze zich gedragen. De animaties in het begin laten ook zien dat de spatie 1 keer ingedrukt moet worden om te beginnen. De S en de P knop moeten echter repeatedly getapt worden. Als je nergens op drukt neemt de exponentiele groei steeds weer toe.
+
+### 11 Strong visual hierarchies work best
+Nederland is volledig in beeld tijdens de spelfase. De rode Nodes beginnen als niks maar groeien sneller en sneller. De knoppen zie je hierna als eerst. Met de knoppen beinvloed je de rode vlakte. Dat is eigenlijk alles wat ik de gebruiker wil laten zien en dat is ook het meest prominent in beeld.
 
 
 
@@ -91,4 +105,6 @@ Nadat dit klaar was heb ik de vormgeving van de main attraction gedaan. De toets
  
  [img10]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr3/img009.png
  "Image 10"
+
+
 
