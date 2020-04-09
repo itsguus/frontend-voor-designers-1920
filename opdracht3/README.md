@@ -1,32 +1,94 @@
-# frontend voor designers - opdracht 3: Een interactie uitwerken met externe data
-
-Voor deze opdracht ga je een functionaliteit ontwerpen met externe data. De data is JSON die met een [REST API](https://developer.mozilla.org/en-US/docs/Glossary/REST) van een externe bron wordt ingeladen met Javascript.  Als de data geladen is moeten gebruikers je ontwerp op verschillende manieren kunnen bedienen. Verschillende states zijn vormgeven en worden op het juiste moment getoond.
-
-
-## Werkwijze
-Schets eerst hoe de functionaliteit er uit komt te zien. Maak daarna een breakdown-schets hoe de verschillende componenten technisch moeten gaan werken...
-
-Werk daarna je ontwerp uit in HTML, CSS en JavaScript.
+# Frontend voor Designers - opdracht 3: Een interactie uitwerken met externe data
+[Link](https://itsguus.github.io/frontend-voor-designers-1920/opdracht1/).  Gemaakt door Guus Groenink.
 
 
-## Planning
-1. Les 5: Briefing opdracht 3, API uitzoeken, tutorial doorlopen, schetsen en beginnen met coderen
-2. Les 6: Eerste versie testen. Meenemen: breakdown-schets, JSON laden in de console, daarna in Javascript HTML elementen aanmaken, de data koppelen en toevoegen aan de DOM
-3. Les 7: Demo presenteren
-4. Les 8: Oplevering en beoordeling
+## Gekozen use case
+Ik heb bedacht om zelf wat te gaan maken. Er zijn allerlei leuke API's beschikbaar en hier ben ik een beetje in gaan rondneuzen. Uiteindelijk kwam ik bij een API die per land informatie gaf over de CoVID-19 crisis. Aangezien ik in quarantaine zit leek mij het leuk om hier iets mee te gaan doen. Ik heb uiteindelijk niet heel veel data die ik nu uit de API laad, maar het is iedere dag wel een ander spelletje. 
+
+## Stap 1 - Schetsen
+Ik wilde het graag over Nederland doen. Hier heb ik mijn idee even snel op papier gezet.
+
+### Afbeelding 1 - Eerste schets
+![alt text][img1]
+ 
 
 
-## Criteria
-1. De uitwerking van je ontwerp moet het doen in een browser en device naar keuze.
-2. De data wordt van een externe bron ingeladen met Javascript.
-3. Een aantal states van de [UI stack](https://www.scotthurff.com/posts/why-your-user-interface-is-awkward-youre-ignoring-the-ui-stack/) worden opgevangen en zijn vormgegeven.
-4. In de demo maak je gebruik van meerdere [UI events](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent) zodat gebruikers je ontwerp op verschillende manieren kunnen bedienen.
-5. In de demo dien je rekening te houden met de interface design principles 04, 08, 09 & 11 van [Principles of User Interface Design](http://bokardo.com/principles-of-user-interface-design/).
-6. Je ontwerp is aantoonbaar getest en verbeterd. Verslaglegging en resultaat publiceren op Github
+## Stap 2 - Coderen
+Ik begon met een canvas. Dit was een blok die ik met een vaste width en height verticaal en horizontaal gecentreerd had. Dit had ik gedaan zodat ik geen gezeik kreeg met responsiveness. Ik heb gekozen voor een "half screen" canvas. Zo kon ik makkelijk werken met brackets op de linkerhelft en chrome op de rechter.  Ik begon hier met een lege browser met enkel de datum en API's die ik in moest laden. Het was nog even wat gezeik hoe ik het juiste land moest selecteren maar dat is uiteindelijk gelukt. 
+
+### Afbeelding 2 - Datum & API's laten werken
+
+![alt text][img2]
+
+Ik moest nu bedenken hoe ik ging groeien. Ik wilde heel graag het ding maken met exponentiele groei. Omdat het over een virus gaat vond ik dat belangrijk voor mijn concept. Dit heeft wel voor wat kwartiertjes hoofdpijn gezorgd terwijl ik bezig was met ellendige wiskunde formules om de tijd juist te krijgen. Ik had dit oorspronkelijk gelinkt met een animatie die exponentiele groei veinsde. Toen de wiskunde eenmaal klopte leek het wel te werken. De rode bolletjes ofwel "Nodes" groeide tegelijk met het aantal confirmed cases.
+
+### Afbeelding 3 - De "Nodes"
+![alt text][img3]
+
+Hierna ging ik aan de slag met de knoppen. Omdat het nog een wiskundige formule en een animatie was die geen enkele relatie met elkaar hadden, was het veel hoofdpijn om dit te finetunen. Toen ik eenmaal klaar was en het klopte, bedacht ik me dat ik me in mijn voet had geschoten. Omdat ik iedere dag begin met een ander dynamisch getal van de API, waren mijn cijfers dus mis. Shit. Hier heb ik ook twee knoppen gemaakt, F & J. De ene stopte de animatie en teller, en de andere liet hem doorgaan. 
+
+### Afbeelding 4 - Iedereen besmet, F & J knoppen.
+![alt text][img4]
+
+Nu viel er een belangrijk kwartje. Ik heb uiteindelijk de CSS animatie laten vallen. In plaats daarvan heb ik de transform: scale met JS opgelost. Met wat wiskunde is het gelukt om de groei van de nodes in relatie met het aantal confirmed cases te linken. Dit klopte nu dus altijd. Nice.
+
+Nu was het dus ook makkelijker om knoppen te maken die de mate van de groei beinvloedde. Dit is me gelukt en ik had nu twee dingen: Stay home (geeft de groei -5) en Go Party (geeft de groei +15). Dit heb ik expres gedaan om een simulatie te maken van de huidige pandemie. Het idee was dat gaan feesten de boel drie keer zoveel verpestte dan het goede wat je doet door thuis te blijven. 
+
+Hierna ging ik verder aan een startscherm. Ik wilde een kleine inleiding maken die vertelt wat je moet doen. Oorspronkelijk had ik een heel verhaal getypt. Toen ik klaar was met typen wist ik eigenlijk meteen al dat ik het om ging gooien. 
+
+### Afbeelding 5 - Startscherm in tekst.
+![alt text][img5]
+
+Ik had hierna ook een eindscherm gemaakt die een dynamische tekst teruggaf afhankelijk van hoe lang het heeft geduurd voordat heel het land besmet raakte.
+
+### Afbeelding 6 - Eindscherm.
+![alt text][img6]
 
 
-## Resources
-- Gebruik verschillende [UI events](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent) om de functionaliteit mee te bedienen.
-- Met behulp van [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest) of [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) kan een [JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) file worden geladen. Daarna kun je de HTML elementen aanmaken, de juiste content koppelen en aan de DOM toevoegen.
-- Hier staat een [tutorial](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) voor het laden van JSON data en het aanmaken van HTMl elementen.
-- Bij het laden van externe data kan de server verschillende [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) doorgeven, die kun je gebruiken om feedback te tonen.
+## Stap 3 - Verfijnen & Afronden
+
+Ik wilde nu nog een aantal dingen veranderen. Het startscherm had teveel tekst en deze heb ik zitten chunken en een animatietje toegevoegd. In de foto hieronder laat ik zien hoe ik vaak aan het debuggen ben in CSS, lekker met verschillende achtergrondkleurtjes.
+
+### Afbeelding 7 - Het nieuwe startscherm  - Debug 
+![alt text][img7]
+
+En hieronder het startscherm zonder rare kleuren.
+
+### Afbeelding 8 - Het nieuwe startscherm.
+![alt text][img8]
+
+Bij het eindscherm vond ik het leuk om nog een "Go again" knop te maken. Dit zorgde ervoor dat de users in control blijven. Zonder dit was de webpagina 'afgelopen' en kon je nergens meer heen. 
+
+### Afbeelding 9 - Het nieuwe eindscherm.
+![alt text][img9]
+
+Nadat dit klaar was heb ik de vormgeving van de main attraction gedaan. De toetsenbordknoppen zijn nu omringd door knoppen dat je ook met je muis kan spelen. Alles werkt nu.
+
+### Afbeelding 10 - Eindresultaat.
+![alt text][img10]
+
+
+
+
+[img1]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img000.jpg
+ "Image 1"
+[img2]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img001.png
+ "Image 2"
+[img3]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img002.png
+ "Image 3"
+[img4]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img003.png
+ "Image 4"
+[img5]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img004.png
+ "Image 5"
+[img6]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img005.png
+ "Image 6"
+[img7]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img006.png
+ "Image 7"
+[img8]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img007.png
+ "Image 8"
+ [img9]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img008.png
+ "Image 9"
+ 
+ [img10]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img009.png
+ "Image 10"
+
