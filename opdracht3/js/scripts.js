@@ -106,7 +106,9 @@ function showConfirmed(jsonObj) { // Een functie die de huidige besmette mensen 
 function die() {
     done = true;
     document.querySelector(".endbox").style.opacity = 1;
-    document.querySelector(".endbox").style.transition = "all 1s ease";
+    document.querySelector(".endbox").style.transition = "opacity 1s ease";
+    document.querySelector(".endbox").style.zIndex = 0;
+
     var dateStart = new Date(),
         endDate = new Date(yyyy, mm - 1, dd),
         amountDays = Math.round(Math.abs((dateStart - endDate) / (24 * 60 * 60 * 1000))),
@@ -116,7 +118,7 @@ function die() {
         message = "OH NO!";
         whatHappened = "Everybody got corona in such a short span..";
     }
-    if (amountDays > 19 && amountDays < 30) {
+    if (amountDays > 19 && amountDays < 45) {
         message = "OKAY...";
         whatHappened = "You stayed home a bit but the virus still spread too fast..";
     }
@@ -179,6 +181,7 @@ function grow() {
     for (i = 0; i < 3; i++) {
         SN[i].classList.add('show');
     }
+    document.querySelector(".startbox").style.zIndex = -1;
     countConfirmed();
 }
 
@@ -205,6 +208,14 @@ function dateTimer() {
     }
 }
 
+function unToggleS() {
+    fKey.classList.toggle('keydown');
+}
+
+function unToggleP() {
+    jKey.classList.toggle('keydown');
+}
+
 request.onload = function () {
     const data = request.response;
     showDate();
@@ -222,22 +233,33 @@ document.addEventListener("keydown", function (e) {
         setTimeout(grow, 1000);
         document.querySelector(".startbox").classList.add("displaynone");
     }
-    if (e.key == "f" && activated === true) {
+    if (e.key == "s" && activated === true) {
         fKey.classList.toggle('keydown');
         stayHome();
     }
-    if (e.key == "j" && activated === true) {
+    if (e.key == "p" && activated === true) {
         jKey.classList.toggle('keydown');
         goParty();
     }
 }, false);
 
 
+document.querySelector(".goBox").addEventListener("click", function () {
+    if (activated === false) {
+        activated = true;
+        allowedToCount = true;
+        setTimeout(dateTimer, 3000);
+        setTimeout(grow, 1000);
+        document.querySelector(".startbox").classList.add("displaynone");
+    }
+});
+
+
 document.addEventListener("keyup", function (e) {
-    if (e.key == "f" && activated === true) {
+    if (e.key == "s" && activated === true) {
         fKey.classList.toggle('keydown');
     }
-    if (e.key == "j" && activated === true) {
+    if (e.key == "p" && activated === true) {
         jKey.classList.toggle('keydown');
     }
 }, false);
@@ -252,6 +274,20 @@ jKey.addEventListener("click", function () {
     jKey.classList.toggle('keydown');
     goParty();
 });
+
+
+document.querySelector(".kBBS").addEventListener("click", function () {
+    fKey.classList.toggle('keydown');
+    stayHome();
+    setTimeout(unToggleS, 100);
+});
+
+document.querySelector(".kBBP").addEventListener("click", function () {
+    jKey.classList.toggle('keydown');
+    goParty();
+    setTimeout(unToggleP, 100);
+});
+
 
 document.querySelector(".buttonAgain").addEventListener("click", function () {
     location.reload();

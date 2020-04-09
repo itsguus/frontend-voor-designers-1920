@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Frontend voor Designers opdracht 3</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -28,16 +28,30 @@
             </div>
         </main>
         <div class="keyBox">
-            <div class="key" id="f">F</div>
-            <div class="key" id="j">J</div>
+            <div class="keyButtonBox kBBS">
+                <p>Stay home</p>
+                <div class="key" id="f">S</div>
+            </div>
+            <div class="keyButtonBox kBBP">
+                <div class="key" id="j">P</div>
+                <p>Go party</p>
+            </div>
         </div>
         <div class="startbox">
             <h1>Welcome to the CoVID-19 Quarantaine Game</h1>
-            <div class="sb introduction">
-                <p>In the CoVID-19 Quarantaine Game you have two options. Either stay home respect the rules of the government, or go party and have some fun instead.</p>
-            </div>
-            <div class="sb description">
-                <p>To stay home, tap the "F" key on your keyboard or click the "Stay Home" button. To go out and party, tap the "J" key on your keyboard or click the "Go Party" button. Hit the space bar to start. </p>
+            <div class="buttonsBox">
+                <div>
+                    <img class="finger tap" src="images/finger.png" alt="">
+                    <div class="key keytap" id="sbegin">S</div>
+                    <h2>Tap "S" to stay home</h2>
+                    <p>Be responsible. Stick to your quarantaine.</p>
+                </div>
+                <div>
+                    <img class="finger tap" src="images/finger.png" alt="">
+                    <div class="key keytap" id="pbegin">P</div>
+                    <h2>Tap "P" to go party</h2>
+                    <p>Don't mind the rest, do whatever you want!</p>
+                </div>
             </div>
             <div class="sb goBox">
                 <img class="finger" src="images/finger.png" alt="">
