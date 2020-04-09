@@ -70,25 +70,25 @@ Nadat dit klaar was heb ik de vormgeving van de main attraction gedaan. De toets
 
 
 
-[img1]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img000.jpg
+[img1]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr3/img000.jpg
  "Image 1"
-[img2]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img001.png
+[img2]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr3/img001.png
  "Image 2"
-[img3]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img002.png
+[img3]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr3/img002.png
  "Image 3"
-[img4]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img003.png
+[img4]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr3/img003.png
  "Image 4"
-[img5]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img004.png
+[img5]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr3/img004.png
  "Image 5"
-[img6]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img005.png
+[img6]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr3/img005.png
  "Image 6"
-[img7]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img006.png
+[img7]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr3/img006.png
  "Image 7"
-[img8]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img007.png
+[img8]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr3/img007.png
  "Image 8"
- [img9]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img008.png
+ [img9]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr3/img008.png
  "Image 9"
  
- [img10]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr1/img009.png
+ [img10]:https://raw.githubusercontent.com/itsguus/frontend-voor-designers-1920/master/opdracht3/md_img_opdr3/img009.png
  "Image 10"
 
